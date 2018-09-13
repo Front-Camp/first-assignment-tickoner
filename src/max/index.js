@@ -7,7 +7,19 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  /* your logic here...*/
+  let filteredArray = [];
+  let result = '';
+  arr.forEach(function(item, arr) {
+    if (isFinite(item)) {
+      filteredArray.push(item);
+    }
+  });
+  if (filteredArray.length !== 0)  {
+    result = Math.max.apply( Math, filteredArray );
+  } else {
+    result = 'there are no numbers in array';
+  }
+  return result;
 };
 
 export default max;

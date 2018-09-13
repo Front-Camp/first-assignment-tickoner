@@ -11,7 +11,12 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-  /* your logic here...*/
+    function filterer(arr) {
+      return arr > 0 || isNaN(arr) === true;
+    }
+    arr = arr.filter(filterer);
+
+   return arr.reduce((a, b) => a + b)
 };
 
 export default sumElements;
